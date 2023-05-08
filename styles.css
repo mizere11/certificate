@@ -1,0 +1,197 @@
+﻿/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+}
+
+/* Form */
+#certificate-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  max-width: 300px; /* Reduced width for minimalistic appearance */
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 14px;
+}
+
+.qr-code {
+display: inline-block;
+width: 80px;
+height: 80px;
+margin: 0 auto 20px;
+position: relative; /* Added position relative to place the date */
+}
+
+/* Position the date at the bottom center of the QR code */
+.qr-code #cert-date {
+position: absolute;
+bottom: -20px;
+left: 50%;
+transform: translateX(-50%);
+font-size: 14px;
+}
+
+.seal {
+position: absolute;
+bottom: 30px;
+right: 30px;
+}
+
+.seal img {
+width: 100px;
+}
+
+.certificate-footer {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+}
+
+.certificate-number {
+font-size: 14px;
+margin-top: 10px;
+}
+
+/* Hide form when certificate is visible */
+.certificate.visible ~ #certificate-form {
+display: none;
+}
+
+/* Show certificate when it has the 'visible' class */
+.certificate.visible {
+display: block;
+}
+
+@media print {
+/* Hide form when printing /
+#certificate-form {
+display: none;
+}
+/ Show the certificate footer when printing /
+.certificate-footer {
+display: block;
+}
+/ Hide the QR code when printing */
+.qr-code {
+display: none;
+}
+}
+
+/* Brighten watermark on downloaded certificate */
+@media print {
+.watermark {
+opacity: 0.2;
+}
+}
+  background-color: #ffffff; /* Added background color for better contrast */
+  padding: 30px; /* Added padding for spacing */
+  border-radius: 10px; /* Added border-radius for a more attractive appearance */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added box-shadow for depth */
+}
+
+#certificate-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#certificate-form input,
+#certificate-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+#certificate-form button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Certificate */
+.certificate {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  border: 5px solid #006400;
+  border-radius: 20px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100%;
+  overflow: hidden;
+  display: none; /* Hide certificate by default */
+}
+
+.watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/dertpfbtv/image/upload/v1683567245/33808137-19CD-4A6C-90B3-75E48003C2C2_xg0t0v.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.certificate-content h1 {
+  display: none;
+}
+
+.certificate-content h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.certificate-content h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.signatures {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.signature {
+  text-align: center;
+}
+
+.signature img {
+  width: 120px;
+}
+
+.signature p {
+  font-size:

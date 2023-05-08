@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form id="certificate-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="type">Type:</label>
+    <select id="type" name="type">
+      <option value="certificate">Professional Certificate</option>
+      <option value="diploma">Professional Diploma</option>
+    </select>
+    <label for="course">Course:</label>
+    <input type="text" id="course" name="course" required>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <button type="submit">Generate Certificate</button>
+  </form>
+  <div id="certificate" class="certificate">
+    <img src="https://res.cloudinary.com/dertpfbtv/image/upload/v1683567245/33808137-19CD-4A6C-90B3-75E48003C2C2_xg0t0v.jpg" alt="Excellence Assured Logo" class="logo">
+    <div class="certificate-content">
+      <h1>Certificate of Course Completion</h1>
+      <h2>This is to certify that</h2>
+      <h3 id="cert-name"></h3>
+      <h2>has fulfilled the requirements for the award of</h2>
+      <h3 id="cert-type"></h3>
+      <h2>in</h2>
+      <h3 id="cert-course"></h3>
+      <h2>on</h2>
+      <h3 id="cert-date"></h3>
+      <div class="signatures">
+        <div class="signature">
+          <img src="https://res.cloudinary.com/dertpfbtv/image/upload/v1683567319/1FBA53F8-B293-4B55-8227-09FFADC71ABF_oadyzo.png" alt="Chairman Signature">
+          <p>Chairman</p>
+        </div>
+        <div class="signature">
+          <img src="https://res.cloudinary.com/dertpfbtv/image/upload/v1683567321/9F9639A9-FE2B-45C2-A2E6-80276B95E1DA_b8of78.png" alt="Deputy Signature">
+          <p>Deputy</p>
+        </div>
+      </div>
+      <div class="qr-code" id="qr-code"></div>
+      <div class="seal">
+        <img src="https://res.cloudinary.com/dertpfbtv/image/upload/v1683567633/E86059AE-135A-470E-9C6F-A50E878D7C3C_klfvnr.jpg" alt="Seal">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+</body>
+</html>
